@@ -26,10 +26,23 @@ if (!function_exists('getRandStr')) {
         return $output;
     }
 }
+if (!function_exists('container')) {
+    function container()
+    {
+        return \Hyperf\Utils\ApplicationContext::getContainer();
+    }
+}
 
 if (!function_exists('cache')) {
     function cache()
     {
         return container()->get(Psr\SimpleCache\CacheInterface::class);
+    }
+}
+
+if (!function_exists('request')) {
+    function request()
+    {
+        return container()->get(\Psr\Http\Message\ServerRequestInterface::class);
     }
 }

@@ -8,9 +8,13 @@ interface  TokenContracts
 
     public function set_token(array $data,string $token = ''):string;
 
-    public function ref_token(string $token = ''):string;
+    public function ref_token(string $token = '',bool $is_old=false):string;
 
     public function del_token(string $token = ''):bool;
+
+    public function check_token(string $token='');
+
+    public function get_data(string $key='',string $token = '');
 
 
 
